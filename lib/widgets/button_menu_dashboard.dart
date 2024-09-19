@@ -15,7 +15,7 @@ class ButtonMenuDashboard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: SizedBox(
-        height: 50,
+        height: 80,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.green.shade900,
@@ -26,7 +26,7 @@ class ButtonMenuDashboard extends StatelessWidget {
           onPressed: onPressed,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image.asset(
                 imagePath,
@@ -35,9 +35,11 @@ class ButtonMenuDashboard extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              Text(
-                text,
-                style: const TextStyle(color: Colors.white),
+              Flexible(
+                child: Text(
+                  text,
+                  style: const TextStyle(color: Colors.white),
+                ),
               ),
             ],
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pajakpro/features/pajak_penghasilan/ui/pph_calculator_page.dart';
 import 'package:pajakpro/widgets/button_menu_dashboard.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -17,6 +18,7 @@ class DashboardPage extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
           child: Column(
@@ -24,7 +26,9 @@ class DashboardPage extends StatelessWidget {
               ButtonMenuDashboard(
                 imagePath: 'assets/icons/pajak-penghasilan.png',
                 text: "Pajak Penghasilan (PPh)",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, PphCalculatorPage.routeName);
+                },
               ),
               ButtonMenuDashboard(
                 imagePath: 'assets/icons/pajak-pertambahan-nilai.png',
@@ -54,7 +58,7 @@ class DashboardPage extends StatelessWidget {
               ButtonMenuDashboard(
                 imagePath:
                     'assets/icons/bea-perolehan-hak-atas-tanah-dan-bangunan.png',
-                text: "Bea Perolehan Hak atas Tanah dan Bangunan",
+                text: "Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB)",
                 onPressed: () {},
               ),
               ButtonMenuDashboard(

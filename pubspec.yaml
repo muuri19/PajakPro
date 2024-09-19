@@ -19,7 +19,6 @@ dev_dependencies:
 flutter: 
   uses-material-design: true  
   assets:
-    - .env
     - assets/logo/google.png
     - assets/icons/bea-perolehan-hak-atas-tanah-dan-bangunan.png
     - assets/icons/pajak-barang-dan-jasa.png
