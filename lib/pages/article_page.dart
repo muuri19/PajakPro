@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class ArticlePage extends StatelessWidget {
   static const routeName = 'article-page';
@@ -44,9 +46,9 @@ class ArticlePage extends StatelessWidget {
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
                         children: [
-                          const Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
+                            children: const [
                               Text("[Role Viewer]"),
                               Text("[DateTime - Posted]"),
                             ],
@@ -72,11 +74,17 @@ class ArticlePage extends StatelessWidget {
                                 width: 100,
                                 height: 100,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    image: const DecorationImage(
-                                        image: NetworkImage(
-                                            "https://mediakeuangan.kemenkeu.go.id/files/Article/laporan-utama/2023/mediagathering/WhatsApp%20Image%202023-10-20%20at%2009.32.54.jpeg"),
-                                        fit: BoxFit.cover)),
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: CachedNetworkImage(
+                                  fit: BoxFit.cover,
+                                  imageUrl:
+                                      "https://mediakeuangan.kemenkeu.go.id/files/Article/laporan-utama/2023/mediagathering/WhatsApp%20Image%202023-10-20%20at%2009.32.54.jpeg",
+                                  placeholder: (context, url) =>
+                                      _buildLoading(context),
+                                  errorWidget: (context, url, error) =>
+                                      const Icon(Icons.error),
+                                ),
                               ),
                             ],
                           )
@@ -87,5 +95,14 @@ class ArticlePage extends StatelessWidget {
                 );
               }),
         ));
+  }
+
+  Widget _buildLoading(BuildContext context) {
+    return Center(
+      child: LoadingAnimationWidget.halfTriangleDot(
+        color: Colors.green.shade900,
+        size: 30,
+      ),
+    );
   }
 }

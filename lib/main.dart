@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pajakpro/features/pajak_penghasilan/ui/pph_calculator_page.dart';
+import 'package:pajakpro/features/pajak_pertambahan_nilai/ui/ppn_calculator_page.dart';
 import 'package:pajakpro/pages/article_page.dart';
 import 'package:pajakpro/pages/dashboard_page.dart';
 import 'package:pajakpro/pages/navigation_page.dart';
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
         ArticlePage.routeName: (context) => const ArticlePage(),
 
         // Feature
-        PphCalculatorPage.routeName: (context) => const PphCalculatorPage()
+        PphCalculatorPage.routeName: (context) => const PphCalculatorPage(),
+        PpnCalculatorPage.routeName: (context) => const PpnCalculatorPage()
       },
     );
   }

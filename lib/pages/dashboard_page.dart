@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pajakpro/features/pajak_penghasilan/ui/pph_calculator_page.dart';
+import 'package:pajakpro/features/pajak_pertambahan_nilai/ui/ppn_calculator_page.dart';
 import 'package:pajakpro/widgets/button_menu_dashboard.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -33,7 +34,9 @@ class DashboardPage extends StatelessWidget {
               ButtonMenuDashboard(
                 imagePath: 'assets/icons/pajak-pertambahan-nilai.png',
                 text: "Pajak Pertambahan Nilai (PPN)",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, PpnCalculatorPage.routeName);
+                },
               ),
               ButtonMenuDashboard(
                 imagePath: 'assets/icons/pajak-penjualan-atas-barang-mewah.png',
