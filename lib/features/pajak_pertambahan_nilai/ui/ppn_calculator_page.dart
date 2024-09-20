@@ -13,11 +13,22 @@ class PpnCalculatorPage extends StatefulWidget {
 class _PpnCalculatorPageState extends State<PpnCalculatorPage> {
   final TextEditingController _controller = TextEditingController();
   double _hasilPPN = 0;
+  double _totalBayar = 0;
+
+  // Fungsi untuk reset input dan data ke default
+  void _resetInput() {
+    _controller.clear(); // Membersihkan input field
+    setState(() {
+      _hasilPPN = 0; // Mengatur ulang hasil PPN ke 0
+      _totalBayar = 0; // Mengatur ulang total bayar ke 0
+    });
+  }
 
   void _hitungPPN() {
     double hargaBarang = double.tryParse(_controller.text) ?? 0;
     setState(() {
       _hasilPPN = hitungPPN(hargaBarang);
+      _totalBayar = hargaBarang + _hasilPPN;
     });
   }
 
@@ -57,21 +68,46 @@ class _PpnCalculatorPageState extends State<PpnCalculatorPage> {
               color: Colors.green.shade900,
             ),
             const SizedBox(height: 16),
+            // Tombol Reset
+            ButtonCalculate(
+              onPressed: _resetInput,
+              text: 'Reset',
+              color: Colors.red.shade700,
+            ),
+            const SizedBox(height: 16),
             Card(
               child: SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'PPN (11%): Rp $_hasilPPN',
-                          style: const TextStyle(fontSize: 18),
-                        ),
-                      ],
-                    ),
-                  )),
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "💵 Pajak Pertambahan Nilai (PPN)",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      const SizedBox(height: 3),
+                      Text(
+                        'Rp $_hasilPPN',
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                      const SizedBox(height: 20),
+                      const Text(
+                        "✅ Total yang harus dibayar",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      const SizedBox(height: 3),
+                      Text(
+                        'Rp $_totalBayar',
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ],
         ),
