@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pajakpro/features/bea_perolehan_hak_tanah_bangunan/ui/bphtb_calculator_page.dart';
+import 'package:pajakpro/features/pajak_bumi_bangunan/ui/pbb_calculator_page.dart';
+import 'package:pajakpro/features/pajak_kendaraan_bermotor/ui/pkb_calculator_page.dart';
 import 'package:pajakpro/features/pajak_penghasilan/ui/pph_calculator_page.dart';
 import 'package:pajakpro/features/pajak_penjualan_barang_mewah/ui/ppnbm_calculator_page.dart';
 import 'package:pajakpro/features/pajak_pertambahan_nilai/ui/ppn_calculator_page.dart';
@@ -49,28 +52,24 @@ class DashboardPage extends StatelessWidget {
               ButtonMenuDashboard(
                 imagePath: 'assets/icons/pajak-bumi-dan-bangunan.png',
                 text: "Pajak Bumi dan Bangunan (PBB)",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, PbbCalculatorPage.routeName);
+                },
               ),
               ButtonMenuDashboard(
                 imagePath: 'assets/icons/pajak-kendaraan-bermotor.png',
                 text: "Pajak Kendaraan Bermotor (PKB)",
-                onPressed: () {},
-              ),
-              ButtonMenuDashboard(
-                imagePath: 'assets/icons/pajak-daerah.png',
-                text: "Pajak Daerah",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, PkbCalculatorPage.routeName);
+                },
               ),
               ButtonMenuDashboard(
                 imagePath:
                     'assets/icons/bea-perolehan-hak-atas-tanah-dan-bangunan.png',
                 text: "Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB)",
-                onPressed: () {},
-              ),
-              ButtonMenuDashboard(
-                imagePath: 'assets/icons/pajak-barang-dan-jasa.png',
-                text: "Pajak Barang dan Jasa Tertentu (PBJT)",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, BphtbCalculatorPage.routeName);
+                },
               ),
             ],
           ),

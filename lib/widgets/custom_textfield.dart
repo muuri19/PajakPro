@@ -13,8 +13,8 @@ class CustomTextfield extends StatelessWidget {
       controller: controller,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-          labelStyle: const TextStyle(color: Colors.black),
           labelText: labelText,
+          labelStyle: const TextStyle(color: Colors.black),
           enabledBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(8)),
               borderSide: BorderSide(color: Colors.black38, width: 1)),
