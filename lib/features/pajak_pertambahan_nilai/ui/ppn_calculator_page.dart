@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pajakpro/widgets/button_calculate.dart';
+import 'package:pajakpro/widgets/custom_appbar.dart';
 import 'package:pajakpro/widgets/custom_textfield.dart';
 
 class PpnCalculatorPage extends StatefulWidget {
@@ -15,12 +16,11 @@ class _PpnCalculatorPageState extends State<PpnCalculatorPage> {
   double _hasilPPN = 0;
   double _totalBayar = 0;
 
-  // Fungsi untuk reset input dan data ke default
   void _resetInput() {
-    _controller.clear(); // Membersihkan input field
+    _controller.clear();
     setState(() {
-      _hasilPPN = 0; // Mengatur ulang hasil PPN ke 0
-      _totalBayar = 0; // Mengatur ulang total bayar ke 0
+      _hasilPPN = 0;
+      _totalBayar = 0;
     });
   }
 
@@ -41,20 +41,7 @@ class _PpnCalculatorPageState extends State<PpnCalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF5F5F5),
-      appBar: AppBar(
-        backgroundColor: Colors.green.shade900,
-        title: const Text('Pajak Pertambahan Nilai (PPN)'),
-        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 18),
-        centerTitle: true,
-        leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              color: Colors.white,
-            )),
-      ),
+      appBar: const CustomAppBar(title: "Pajak Pertambahan Nilai (PPN)"),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -68,7 +55,6 @@ class _PpnCalculatorPageState extends State<PpnCalculatorPage> {
               color: Colors.green.shade900,
             ),
             const SizedBox(height: 16),
-            // Tombol Reset
             ButtonCalculate(
               onPressed: _resetInput,
               text: 'Reset',

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pajakpro/features/pajak_penghasilan/ui/pph_calculator_page.dart';
+import 'package:pajakpro/features/pajak_penjualan_barang_mewah/ui/ppnbm_calculator_page.dart';
 import 'package:pajakpro/features/pajak_pertambahan_nilai/ui/ppn_calculator_page.dart';
 import 'package:pajakpro/widgets/button_menu_dashboard.dart';
 
@@ -41,7 +42,9 @@ class DashboardPage extends StatelessWidget {
               ButtonMenuDashboard(
                 imagePath: 'assets/icons/pajak-penjualan-atas-barang-mewah.png',
                 text: "Pajak Penjualan atas Barang Mewah (PPnBM)",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, PpnbmCalculatorPage.routeName);
+                },
               ),
               ButtonMenuDashboard(
                 imagePath: 'assets/icons/pajak-bumi-dan-bangunan.png',

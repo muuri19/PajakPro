@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pajakpro/widgets/button_calculate.dart';
+import 'package:pajakpro/widgets/custom_appbar.dart';
 import 'package:pajakpro/widgets/custom_textfield.dart';
 import '../services/pph_calculator.dart';
 import '../models/pph_calculation.dart';
@@ -60,22 +61,7 @@ class _PphCalculatorPageState extends State<PphCalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF5F5F5),
-      appBar: AppBar(
-        backgroundColor: Colors.green.shade900,
-        title: const Text(
-          "Pajak Penghasilan (PPh)",
-        ),
-        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 18),
-        centerTitle: true,
-        leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              color: Colors.white,
-            )),
-      ),
+      appBar: const CustomAppBar(title: "Pajak Penghasilan (PPh)"),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
