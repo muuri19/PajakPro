@@ -29,13 +29,13 @@ class _PpnbmCalculatorPageState extends State<PpnbmCalculatorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: "Pajak Penjualan atas Barang Mewah"),
+      appBar: const CustomAppBar(title: "Pajak Penjualan atas Barang Mewah", panduanPajak: 'Pajak Penjualan atas Barang Mewah',),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             CustomTextfield(
-                controller: _hargaController, labelText: "Harga Barang"),
+                controller: _hargaController, labelText: "Harga Barang", validator: (value) {  },),
             const SizedBox(height: 16),
             Container(
               decoration: BoxDecoration(

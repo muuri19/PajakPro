@@ -40,7 +40,7 @@ class _PbbCalculatorPageState extends State<PbbCalculatorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: "Hitung Pajak Bumi dan Bangunan"),
+      appBar: const CustomAppBar(title: "Hitung Pajak Bumi dan Bangunan", panduanPajak: 'Hitung Pajak Bumi dan Bangunan',),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

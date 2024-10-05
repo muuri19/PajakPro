@@ -27,7 +27,7 @@ class _PkbCalculatorPageState extends State<PkbCalculatorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: "Pajak Kendaraan Bermotor"),
+      appBar: const CustomAppBar(title: "Pajak Kendaraan Bermotor", panduanPajak: 'Pajak Kendaraan Bermotor',),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -35,7 +35,7 @@ class _PkbCalculatorPageState extends State<PkbCalculatorPage> {
           children: [
             CustomTextfield(
                 controller: _njkbController,
-                labelText: "Nilai Jual Kendaraan Bermotor (NJKB)"),
+                labelText: "Nilai Jual Kendaraan Bermotor (NJKB)", validator: (value) {  },),
             const SizedBox(height: 20),
             ButtonCalculate(
                 onPressed: _calculateTax,

@@ -23,6 +23,13 @@ flutter:
   uses-material-design: true  
   assets:
     - assets/logo/google.png
+    - assets/logo/pajakpro-logo.jpeg
+    - assets/logo/pajakpro-logo2.jpeg
+    - assets/logo/pajakpro-logo-nobg.png
+    - assets/logo/pajakpro-logo2-nobg.png
+    - assets/logo/google.png
+    - assets/logo/google.png
+    - assets/logo/google.png
     - assets/icons/bea-perolehan-hak-atas-tanah-dan-bangunan.png
     - assets/icons/pajak-barang-dan-jasa.png
     - assets/icons/pajak-bumi-dan-bangunan.png

@@ -9,7 +9,9 @@ import 'package:pajakpro/features/pajak_pertambahan_nilai/ui/ppn_calculator_page
 import 'package:pajakpro/pages/article_page.dart';
 import 'package:pajakpro/pages/dashboard_page.dart';
 import 'package:pajakpro/pages/navigation_page.dart';
+import 'package:pajakpro/pages/splash_screen.dart';
 
+//Ini class main
 void main() {
   runApp(const MyApp());
 }
@@ -27,8 +29,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: GoogleFonts.nunitoTextTheme(Theme.of(context).textTheme),
       ),
-      initialRoute: NavigationPage.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: {
+        SplashScreen.routeName: (context) => const SplashScreen(),
         NavigationPage.routeName: (context) => const NavigationPage(),
         DashboardPage.routeName: (context) => const DashboardPage(),
         ArticlePage.routeName: (context) => const ArticlePage(),
@@ -37,10 +40,9 @@ class MyApp extends StatelessWidget {
         PphCalculatorPage.routeName: (context) => const PphCalculatorPage(),
         PpnCalculatorPage.routeName: (context) => const PpnCalculatorPage(),
         PpnbmCalculatorPage.routeName: (context) => const PpnbmCalculatorPage(),
-        PbbCalculatorPage.routeName: (context) => PbbCalculatorPage(),
+        PbbCalculatorPage.routeName: (context) => const PbbCalculatorPage(),
         PkbCalculatorPage.routeName: (context) => const PkbCalculatorPage(),
         BphtbCalculatorPage.routeName: (context) => const BphtbCalculatorPage()
-
       },
     );
   }

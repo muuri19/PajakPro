@@ -21,9 +21,9 @@ class _BphtbCalculatorPageState extends State<BphtbCalculatorPage> {
     double npoptkp = double.parse(_npoptkpController.text);
 
     if (npop > npoptkp) {
-      _result = (npop - npoptkp) * 0.05; // Tarif 5%
+      _result = (npop - npoptkp) * 0.05;
     } else {
-      _result = 0; // Jika NPOP kurang dari NPOPTKP, BPHTB tidak dikenakan
+      _result = 0;
     }
     setState(() {});
   }
@@ -31,19 +31,31 @@ class _BphtbCalculatorPageState extends State<BphtbCalculatorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: "Kalkulator BPHTB"),
+      appBar: const CustomAppBar(
+        title: "BPHTB",
+        panduanPajak: 'Nilai Perolehan Objek Pajak (NPOP)',
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             CustomTextfield(
-                controller: _npopController,
-                labelText: "Nilai Perolehan Objek Pajak (NPOP)"),
+              controller: _npopController,
+              labelText: "Nilai Perolehan Objek Pajak (NPOP)",
+              validator: (value) {
+                return null;
+              },
+            ),
             const SizedBox(
               height: 15,
             ),
             CustomTextfield(
-                controller: _npoptkpController, labelText: "NPOPTKP"),
+              controller: _npoptkpController,
+              labelText: "NPOPTKP",
+              validator: (value) {
+                return null;
+              },
+            ),
             const SizedBox(height: 20),
             ButtonCalculate(
                 onPressed: _calculateBPHTB,
